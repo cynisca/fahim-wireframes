@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aisly — Five Themes</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#D8D3CB;font-family:'DM Sans',sans-serif;padding:40px 20px 60px;min-height:100vh;}
+
+h1{text-align:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:32px;}
+
+.grid{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;align-items:flex-start;}
+
+.theme-col{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.theme-label{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#777;}
+
+.phone{width:200px;border-radius:38px;border:2px solid;overflow:hidden;position:relative;}
+.di{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:72px;height:20px;border-radius:999px;z-index:10;}
+.screen{min-height:520px;padding-top:44px;display:flex;flex-direction:column;}
+.sbar{display:flex;justify-content:space-between;padding:0 18px 3px;font-size:9px;font-weight:500;}
+.body{padding:0 16px 20px;flex:1;}
+.wordmark{line-height:1;margin-bottom:3px;}
+.tagline{margin-bottom:14px;}
+.hero{border-radius:14px;padding:14px 16px;margin-bottom:10px;position:relative;overflow:hidden;}
+.hero-lbl{font-size:8px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+.hero-name{font-size:16px;margin-bottom:2px;}
+.hero-dist{font-size:9px;}
+.cta{width:100%;border:none;border-radius:12px;padding:14px;font-size:14px;cursor:pointer;margin-bottom:14px;display:block;}
+.sec-lbl{font-size:8px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
+.list-card{border-radius:10px;overflow:hidden;}
+.list-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;}
+.list-name{font-size:11px;font-weight:500;margin-bottom:2px;}
+.list-meta{font-size:9px;}
+
+/* ── 1. Market Fresh ── */
+.mf .phone{border-color:#C4A882;box-shadow:4px 4px 0 0 #A88A60;}
+.mf .di{background:#2C1810;}
+.mf .screen{background:#FBF6EE;}
+.mf .sbar{color:#7A5C3A;font-family:'DM Sans',sans-serif;}
+.mf .wordmark{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2C1810;}
+.mf .tagline{font-family:'DM Sans',sans-serif;font-size:10px;color:#B89A78;font-style:italic;font-weight:300;}
+.mf .hero{background:#2C1810;}
+.mf .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 1px,transparent 1px,transparent 8px);}
+.mf .hero-lbl{color:rgba(255,200,150,.45);font-family:'DM Sans',sans-serif;}
+.mf .hero-name{font-family:'Playfair Display',serif;font-weight:700;color:#FFF8F0;position:relative;}
+.mf .hero-dist{font-family:'DM Sans',sans-serif;color:rgba(255,200,150,.5);font-weight:300;position:relative;}
+.mf .cta{background:#B85C2C;color:#FFF8F0;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-.01em;}
+.mf .sec-lbl{color:#B89A78;font-family:'DM Sans',sans-serif;}
+.mf .list-card{background:#fff;border:1px solid #D4C4A8;}
+.mf .list-row{border-bottom:1px solid #F0E6D6;}
+.mf .list-row:last-child{border-bottom:none;}
+.mf .list-name{font-family:'DM Sans',sans-serif;color:#2C1810;}
+.mf .list-meta{font-family:'DM Sans',sans-serif;color:#B89A78;}
+.mf .arr{font-size:14px;color:#C4A882;}
+
+/* Route card */
+.mf .stop-h{background:#F0E6D6;border-radius:10px 10px 0 0;padding:8px 12px;display:flex;justify-content:space-between;border:1px solid #D4C4A8;border-bottom:none;}
+.mf .stop-z{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#2C1810;}
+.mf .stop-b{font-family:'DM Sans',sans-serif;font-size:8px;background:#B85C2C;color:#fff;padding:2px 8px;border-radius:999px;}
+.mf .stop-i{background:#fff;border:1px solid #D4C4A8;border-top:none;border-radius:0 0 10px 10px;margin-bottom:10px;}
+.mf .ri{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid #F0E6D6;}
+.mf .ri:last-child{border-bottom:none;}
+.mf .cb{width:16px;height:16px;border-radius:50%;border:1.5px solid #D4C4A8;flex-shrink:0;}
+.mf .cb.chk{background:#2C7A3A;border-color:#2C7A3A;display:flex;align-items:center;justify-content:center;}
+.mf .cb.chk::after{content:'';width:3px;height:6px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(40deg) translate(-.5px,-1px);display:block;}
+.mf .ri-n{font-family:'DM Sans',sans-serif;font-size:11px;color:#2C1810;flex:1;}
+.mf .ri-n.s{text-decoration:line-through;color:#B89A78;}
+.mf .ri-l{font-family:'DM Sans',sans-serif;font-size:9px;color:#B85C2C;font-weight:500;}
+
+/* ── 2. Flighty Dark ── */
+.fd .phone{border-color:#2A2D35;box-shadow:4px 4px 0 0 #111318;}
+.fd .di{background:#000;}
+.fd .screen{background:#12141A;}
+.fd .sbar{color:#4A5068;font-family:'Sora',sans-serif;}
+.fd .wordmark{font-family:'Sora',sans-serif;font-size:28px;font-weight:600;color:#F0F2FF;letter-spacing:-.04em;}
+.fd .tagline{font-family:'Sora',sans-serif;font-size:9px;color:#4ECDC4;font-weight:300;letter-spacing:.08em;text-transform:uppercase;}
+.fd .hero{background:#1A2A3A;border:1px solid #2A3545;}
+.fd .hero-lbl{color:#4A5A70;font-family:'Sora',sans-serif;}
+.fd .hero-name{font-family:'Sora',sans-serif;font-weight:600;color:#F0F2FF;}
+.fd .hero-dist{font-family:'Sora',sans-serif;color:#4ECDC4;font-weight:300;}
+.fd .cta{background:#4ECDC4;color:#0A1A1A;font-family:'Sora',sans-serif;font-weight:600;border-radius:10px;}
+.fd .sec-lbl{color:#3A4058;font-family:'Sora',sans-serif;}
+.fd .list-card{background:#1C1F28;border:1px solid #252830;}
+.fd .list-row{border-bottom:1px solid #1E2028;}
+.fd .list-row:last-child{border-bottom:none;}
+.fd .list-name{font-family:'Sora',sans-serif;color:#C0C8E0;font-weight:300;}
+.fd .list-meta{font-family:'Sora',sans-serif;color:#4A5068;}
+.fd .arr{font-size:12px;color:#4ECDC4;}
+
+.fd .stop-h{background:#1C1F28;border-radius:10px 10px 0 0;padding:8px 12px;display:flex;justify-content:space-between;}
+.fd .stop-z{font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:#F0F2FF;}
+.fd .stop-b{font-family:'Sora',sans-serif;font-size:7px;background:#4ECDC4;color:#0A1A1A;padding:2px 8px;border-radius:999px;font-weight:600;}
+.fd .stop-i{background:#16181F;border:1px solid #252830;border-top:none;border-radius:0 0 10px 10px;margin-bottom:8px;}
+.fd .ri{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid #1E2028;}
+.fd .ri:last-child{border-bottom:none;}
+.fd .cb{width:15px;height:15px;border-radius:3px;border:1px solid #3A3F50;flex-shrink:0;}
+.fd .cb.chk{background:#4ECDC4;border-color:#4ECDC4;display:flex;align-items:center;justify-content:center;}
+.fd .cb.chk::after{content:'';width:3px;height:6px;border-right:1.5px solid #0A1A1A;border-bottom:1.5px solid #0A1A1A;transform:rotate(40deg) translate(-.5px,-1px);display:block;}
+.fd .ri-n{font-family:'Sora',sans-serif;font-size:11px;color:#C0C8E0;font-weight:300;flex:1;}
+.fd .ri-n.s{text-decoration:line-through;color:#3A4058;}
+.fd .ri-l{font-family:'Sora',sans-serif;font-size:8px;color:#4ECDC4;font-weight:600;}
+
+/* ── 3. Brutalist ── */
+.br .phone{border-color:#1C1B18;border-width:3px;box-shadow:6px 6px 0 0 #1C1B18;}
+.br .di{background:#1C1B18;}
+.br .screen{background:#F5F4F0;}
+.br .sbar{color:#888;font-family:'Space Mono',monospace;font-size:8px;}
+.br .body{padding:0;}
+.br .top-band{border-bottom:3px solid #1C1B18;padding:6px 14px 10px;}
+.br .wordmark{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;color:#1C1B18;letter-spacing:-.03em;}
+.br .tagline{font-family:'Space Mono',monospace;font-size:7px;color:#888;text-transform:uppercase;letter-spacing:.1em;}
+.br .hero{background:#1C1B18;border-radius:0;padding:12px 14px;margin:0;}
+.br .hero-lbl{color:#666;font-family:'Space Mono',monospace;}
+.br .hero-name{font-family:'Space Mono',monospace;font-weight:700;color:#F5F4F0;font-size:13px;text-transform:uppercase;}
+.br .hero-dist{font-family:'Space Mono',monospace;color:#555;font-size:8px;}
+.br .inner{padding:10px 14px 20px;}
+.br .cta{background:#1C1B18;color:#F5F4F0;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;border-radius:0;text-transform:uppercase;letter-spacing:.06em;border:2px solid #1C1B18;}
+.br .sec-lbl{color:#888;font-family:'Space Mono',monospace;border-top:1px solid #1C1B18;padding-top:6px;}
+.br .list-card{border:2px solid #1C1B18;border-radius:0;}
+.br .list-row{border-bottom:1px solid #DDD;padding:8px 10px;}
+.br .list-row:last-child{border-bottom:none;}
+.br .list-name{font-family:'Space Mono',monospace;color:#1C1B18;font-size:10px;}
+.br .list-meta{font-family:'Space Mono',monospace;color:#888;font-size:8px;}
+.br .arr{font-family:'Space Mono',monospace;font-size:12px;color:#1C1B18;}
+
+.br .stop-h{background:#1C1B18;padding:7px 10px;display:flex;justify-content:space-between;margin-bottom:0;}
+.br .stop-z{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#F5F4F0;text-transform:uppercase;}
+.br .stop-b{font-family:'Space Mono',monospace;font-size:7px;color:#F5F4F0;letter-spacing:.06em;}
+.br .stop-i{background:#F5F4F0;border:2px solid #1C1B18;border-top:none;margin-bottom:8px;}
+.br .ri{display:flex;align-items:center;gap:10px;padding:7px 10px;border-bottom:1px solid #E0E0D8;}
+.br .ri:last-child{border-bottom:none;}
+.br .cb{width:14px;height:14px;border-radius:0;border:2px solid #1C1B18;flex-shrink:0;}
+.br .cb.chk{background:#1C1B18;display:flex;align-items:center;justify-content:center;}
+.br .cb.chk::after{content:'';width:3px;height:5px;border-right:1.5px solid #F5F4F0;border-bottom:1.5px solid #F5F4F0;transform:rotate(40deg) translate(-.5px,-1px);display:block;}
+.br .ri-n{font-family:'Space Mono',monospace;font-size:10px;color:#1C1B18;font-weight:700;flex:1;}
+.br .ri-n.s{text-decoration:line-through;color:#888;}
+.br .ri-l{font-family:'Space Mono',monospace;font-size:7px;color:#888;}
+
+/* ── 4. Soft System ── */
+.ss .phone{border-color:#D1D0D5;box-shadow:4px 4px 0 0 #C0BFC4;}
+.ss .di{background:#000;}
+.ss .screen{background:#F2F2F7;}
+.ss .sbar{color:#8E8E93;font-family:'DM Sans',sans-serif;}
+.ss .wordmark{font-family:'DM Sans',sans-serif;font-size:30px;font-weight:700;color:#000;letter-spacing:-.03em;}
+.ss .tagline{font-family:'DM Sans',sans-serif;font-size:10px;color:#8E8E93;}
+.ss .hero{background:#fff;border-radius:14px;}
+.ss .hero-lbl{color:#8E8E93;font-family:'DM Sans',sans-serif;}
+.ss .hero-name{font-family:'DM Sans',sans-serif;font-weight:600;color:#000;}
+.ss .hero-dist{font-family:'DM Sans',sans-serif;color:#8E8E93;}
+.ss .cta{background:#007AFF;color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;border-radius:14px;}
+.ss .sec-lbl{color:#8E8E93;font-family:'DM Sans',sans-serif;padding-left:4px;}
+.ss .list-card{background:#fff;border-radius:12px;overflow:hidden;}
+.ss .list-row{border-bottom:.5px solid #E5E5EA;}
+.ss .list-row:last-child{border-bottom:none;}
+.ss .list-name{font-family:'DM Sans',sans-serif;color:#000;}
+.ss .list-meta{font-family:'DM Sans',sans-serif;color:#8E8E93;}
+.ss .arr{font-size:14px;color:#C7C7CC;}
+
+.ss .stop-h{background:#fff;border-radius:12px 12px 0 0;padding:8px 14px;display:flex;justify-content:space-between;}
+.ss .stop-z{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#000;}
+.ss .stop-b{font-family:'DM Sans',sans-serif;font-size:8px;background:#E8F5E9;color:#34C759;padding:2px 8px;border-radius:999px;font-weight:600;}
+.ss .stop-i{background:#fff;border-radius:0 0 12px 12px;margin-bottom:8px;overflow:hidden;}
+.ss .ri{display:flex;align-items:center;gap:10px;padding:8px 14px;border-top:.5px solid #E5E5EA;}
+.ss .ri:first-child{border-top:none;}
+.ss .cb{width:18px;height:18px;border-radius:50%;border:1.5px solid #C7C7CC;flex-shrink:0;}
+.ss .cb.chk{background:#34C759;border-color:#34C759;display:flex;align-items:center;justify-content:center;}
+.ss .cb.chk::after{content:'';width:3px;height:6px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(40deg) translate(-.5px,-1px);display:block;}
+.ss .ri-n{font-family:'DM Sans',sans-serif;font-size:11px;color:#000;flex:1;}
+.ss .ri-n.s{text-decoration:line-through;color:#C7C7CC;}
+.ss .ri-l{font-family:'DM Sans',sans-serif;font-size:8px;color:#8E8E93;}
+
+/* ── 5. Cartography ── */
+.ca .phone{border-color:#8A7A62;box-shadow:4px 4px 0 0 #6E5E48;}
+.ca .di{background:#1A1208;}
+.ca .screen{background:#F4F0E6;position:relative;}
+.ca .screen::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 20px,rgba(139,119,90,.09) 20px,rgba(139,119,90,.09) 21px),repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(139,119,90,.09) 20px,rgba(139,119,90,.09) 21px);pointer-events:none;}
+.ca .screen>*{position:relative;z-index:1;}
+.ca .sbar{color:#8A7A62;font-family:'DM Sans',sans-serif;}
+.ca .wordmark{font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:#1A1208;letter-spacing:-.02em;}
+.ca .tagline{font-family:'DM Sans',sans-serif;font-size:10px;color:#8A7A62;font-style:italic;font-weight:300;}
+.ca .hero{background:#2C3820;}
+.ca .hero::before{content:'';position:absolute;inset:0;background:repeating-radial-gradient(circle at 75% 50%,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 22px);}
+.ca .hero-lbl{color:rgba(200,210,180,.45);font-family:'DM Sans',sans-serif;position:relative;}
+.ca .hero-name{font-family:'Fraunces',serif;font-weight:500;color:#EEF0E8;position:relative;}
+.ca .hero-dist{font-family:'DM Sans',sans-serif;color:rgba(200,210,180,.5);font-weight:300;position:relative;}
+.ca .cta{background:#5C7A3A;color:#EEF0E8;font-family:'Fraunces',serif;font-weight:500;font-size:15px;border-radius:10px;letter-spacing:-.01em;}
+.ca .sec-lbl{color:#8A7A62;font-family:'DM Sans',sans-serif;}
+.ca .list-card{background:rgba(255,255,255,.6);border:1px solid #C8BEA8;border-radius:10px;}
+.ca .list-row{border-bottom:1px solid #E8E2D4;}
+.ca .list-row:last-child{border-bottom:none;}
+.ca .list-name{font-family:'DM Sans',sans-serif;color:#1A1208;}
+.ca .list-meta{font-family:'DM Sans',sans-serif;color:#8A7A62;}
+.ca .arr{font-size:12px;color:#8A7A62;}
+
+.ca .route-line{position:relative;padding-left:18px;}
+.ca .route-line::before{content:'';position:absolute;left:5px;top:18px;bottom:24px;width:1px;background:repeating-linear-gradient(to bottom,#8A7A62 0,#8A7A62 4px,transparent 4px,transparent 8px);}
+.ca .stop-group{position:relative;margin-bottom:10px;}
+.ca .pin{position:absolute;left:-16px;top:11px;width:10px;height:10px;background:#5C7A3A;border-radius:50%;border:1.5px solid #F4F0E6;}
+.ca .pin.done{background:#8A7A62;}
+.ca .stop-h{background:#E8E2D4;border-radius:8px 8px 0 0;padding:7px 10px;display:flex;justify-content:space-between;border:1px solid #C8BEA8;border-bottom:none;}
+.ca .stop-z{font-family:'Fraunces',serif;font-size:12px;font-weight:500;color:#1A1208;}
+.ca .stop-b{font-family:'DM Sans',sans-serif;font-size:7px;background:#5C7A3A;color:#fff;padding:2px 7px;border-radius:3px;}
+.ca .stop-i{background:rgba(255,255,255,.6);border:1px solid #C8BEA8;border-top:none;border-radius:0 0 8px 8px;overflow:hidden;}
+.ca .ri{display:flex;align-items:center;gap:10px;padding:7px 10px;border-bottom:1px solid #E8E2D4;}
+.ca .ri:last-child{border-bottom:none;}
+.ca .cb{width:14px;height:14px;border-radius:2px;border:1.5px solid #C8BEA8;flex-shrink:0;}
+.ca .cb.chk{background:#5C7A3A;border-color:#5C7A3A;display:flex;align-items:center;justify-content:center;}
+.ca .cb.chk::after{content:'';width:3px;height:5px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(40deg) translate(-.5px,-1px);display:block;}
+.ca .ri-n{font-family:'DM Sans',sans-serif;font-size:10px;color:#1A1208;flex:1;}
+.ca .ri-n.s{text-decoration:line-through;color:#A89A82;}
+.ca .ri-l{font-family:'DM Sans',sans-serif;font-size:8px;color:#5C7A3A;font-weight:500;}
+
+/* shared pills/prog */
+.pills{display:flex;gap:5px;margin-bottom:10px;flex-wrap:wrap;}
+.pill{font-size:9px;padding:4px 10px;border-radius:999px;}
+.prog-wrap{margin-bottom:10px;}
+.prog-bg{height:3px;border-radius:2px;margin-bottom:4px;}
+.prog-fill{height:100%;width:28%;border-radius:2px;}
+.prog-lbl{display:flex;justify-content:space-between;font-size:8px;}
+</style>
+</head>
+<body>
+<h1>Aisly · Five visual themes · Home + Route</h1>
+<div class="grid">
+
+<!-- ══ MARKET FRESH ══ -->
+<div class="theme-col mf">
+  <div class="theme-label">1 · Market Fresh</div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:41<span>●●● ▊</span></div>
+      <div class="body">
+        <div class="wordmark" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#2C1810;">Aisly</div>
+        <div class="tagline" style="font-family:'DM Sans',sans-serif;font-size:10px;color:#B89A78;font-style:italic;">Your smartest grocery run</div>
+        <div class="hero">
+          <div class="hero-lbl" style="font-family:'DM Sans',sans-serif;">Your store</div>
+          <div class="hero-name" style="font-family:'Playfair Display',serif;font-weight:700;color:#FFF8F0;">Walmart Milpitas</div>
+          <div class="hero-dist" style="font-family:'DM Sans',sans-serif;color:rgba(255,200,150,.5);">0.8 mi · 301 Ranch Dr</div>
+        </div>
+        <button class="cta" style="font-family:'Playfair Display',serif;font-weight:700;background:#B85C2C;color:#FFF8F0;">Plan a trip →</button>
+        <div class="sec-lbl" style="font-family:'DM Sans',sans-serif;color:#B89A78;">Recent</div>
+        <div class="list-card">
+          <div class="list-row"><div><div class="list-name" style="font-family:'DM Sans',sans-serif;color:#2C1810;">18 items</div><div class="list-meta" style="font-family:'DM Sans',sans-serif;color:#B89A78;">Tue, Mar 25</div></div><span class="arr">›</span></div>
+          <div class="list-row" style="border-bottom:none;"><div><div class="list-name" style="font-family:'DM Sans',sans-serif;color:#2C1810;">12 items</div><div class="list-meta" style="font-family:'DM Sans',sans-serif;color:#B89A78;">Sat, Mar 22</div></div><span class="arr">›</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:46<span>●●● ▊</span></div>
+      <div class="body">
+        <div class="pills">
+          <span class="pill" style="background:#E8F5EC;color:#2C7A3A;border:1px solid #B8D4C0;font-family:'DM Sans',sans-serif;">14 items</span>
+          <span class="pill" style="background:#F0E6D6;color:#7A5C3A;border:1px solid #D4C4A8;font-family:'DM Sans',sans-serif;">5 stops</span>
+          <span class="pill" style="background:#F0E6D6;color:#7A5C3A;border:1px solid #D4C4A8;font-family:'DM Sans',sans-serif;">~12 min</span>
+        </div>
+        <div class="prog-wrap">
+          <div class="prog-bg" style="background:#E8DDD0;"><div class="prog-fill" style="background:#B85C2C;"></div></div>
+          <div class="prog-lbl" style="font-family:'DM Sans',sans-serif;color:#B89A78;"><span>4 of 14</span><span>10 left</span></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Produce</span><span class="stop-b">Stop 1</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">baby spinach</div><div class="ri-l">Produce</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">avocado</div><div class="ri-l">Produce</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">lime</div><div class="ri-l">Produce</div></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Meat &amp; Seafood</span><span class="stop-b">Stop 2</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb"></div><div class="ri-n">chicken thighs</div><div class="ri-l">Meat</div></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Dairy · D4</span><span class="stop-b">Stop 3</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">milk</div><div class="ri-l">D4</div></div>
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">eggs</div><div class="ri-l">D4</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">greek yogurt</div><div class="ri-l">D4</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FLIGHTY DARK ══ -->
+<div class="theme-col fd">
+  <div class="theme-label">2 · Flighty Dark</div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:41<span>●●● ▊</span></div>
+      <div class="body">
+        <div class="wordmark" style="font-family:'Sora',sans-serif;font-size:28px;font-weight:600;color:#F0F2FF;letter-spacing:-.04em;">Aisly</div>
+        <div class="tagline" style="font-family:'Sora',sans-serif;font-size:8px;color:#4ECDC4;letter-spacing:.08em;text-transform:uppercase;">Smart grocery routing</div>
+        <div class="hero">
+          <div class="hero-lbl" style="font-family:'Sora',sans-serif;">Your store</div>
+          <div class="hero-name" style="font-family:'Sora',sans-serif;font-weight:600;color:#F0F2FF;">Walmart Milpitas</div>
+          <div class="hero-dist" style="font-family:'Sora',sans-serif;color:#4ECDC4;font-weight:300;">0.8 mi · 301 Ranch Dr</div>
+        </div>
+        <button class="cta" style="font-family:'Sora',sans-serif;font-weight:600;background:#4ECDC4;color:#0A1A1A;border-radius:10px;">Plan a trip</button>
+        <div class="sec-lbl" style="font-family:'Sora',sans-serif;color:#3A4058;">Recent trips</div>
+        <div class="list-card">
+          <div class="list-row"><div><div class="list-name" style="font-family:'Sora',sans-serif;color:#C0C8E0;font-weight:300;">18 items</div><div class="list-meta" style="font-family:'Sora',sans-serif;color:#4A5068;">Tue, Mar 25</div></div><span class="arr">›</span></div>
+          <div class="list-row" style="border-bottom:none;"><div><div class="list-name" style="font-family:'Sora',sans-serif;color:#C0C8E0;font-weight:300;">12 items</div><div class="list-meta" style="font-family:'Sora',sans-serif;color:#4A5068;">Sat, Mar 22</div></div><span class="arr">›</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:46<span>●●● ▊</span></div>
+      <div class="body">
+        <div class="pills">
+          <span class="pill" style="background:rgba(78,205,196,.12);color:#4ECDC4;border:1px solid rgba(78,205,196,.25);font-family:'Sora',sans-serif;">14 items</span>
+          <span class="pill" style="background:#1C1F28;color:#4A5068;font-family:'Sora',sans-serif;">5 stops</span>
+          <span class="pill" style="background:#1C1F28;color:#4A5068;font-family:'Sora',sans-serif;">~12 min</span>
+        </div>
+        <div class="prog-wrap">
+          <div class="prog-bg" style="background:#1C1F28;height:2px;"><div class="prog-fill" style="background:#4ECDC4;"></div></div>
+          <div class="prog-lbl" style="font-family:'Sora',sans-serif;color:#3A4058;"><span>4 of 14</span><span>10 left</span></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Produce</span><span class="stop-b">Stop 1</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">baby spinach</div><div class="ri-l">Produce</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">avocado</div><div class="ri-l">Produce</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">lime</div><div class="ri-l">Produce</div></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Meat &amp; Seafood</span><span class="stop-b">Stop 2</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb"></div><div class="ri-n">chicken thighs</div><div class="ri-l">Meat</div></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Dairy · D4</span><span class="stop-b">Stop 3</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">milk</div><div class="ri-l">D4</div></div>
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">eggs</div><div class="ri-l">D4</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">greek yogurt</div><div class="ri-l">D4</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BRUTALIST ══ -->
+<div class="theme-col br">
+  <div class="theme-label">3 · Brutalist</div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:41<span>●●● ▊</span></div>
+      <div class="body">
+        <div class="top-band">
+          <div style="font-family:'Space Mono',monospace;font-size:26px;font-weight:700;color:#1C1B18;letter-spacing:-.03em;line-height:1;margin-bottom:3px;">AISLY</div>
+          <div style="font-family:'Space Mono',monospace;font-size:7px;color:#888;text-transform:uppercase;letter-spacing:.1em;">Grocery routing system</div>
+        </div>
+        <div class="hero">
+          <div class="hero-lbl" style="font-family:'Space Mono',monospace;">Current store</div>
+          <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#F5F4F0;text-transform:uppercase;">WALMART MILPITAS</div>
+          <div style="font-family:'Space Mono',monospace;font-size:8px;color:#555;">0.8 mi / 301 Ranch Dr</div>
+        </div>
+        <div class="inner">
+          <button class="cta">Plan trip →</button>
+          <div style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:#888;border-top:1px solid #1C1B18;padding-top:5px;margin-bottom:6px;">Trips</div>
+          <div class="list-card">
+            <div class="list-row"><div><div style="font-family:'Space Mono',monospace;font-size:10px;color:#1C1B18;font-weight:700;">18 items</div><div style="font-family:'Space Mono',monospace;font-size:8px;color:#888;">03/25</div></div><span style="font-family:'Space Mono',monospace;font-size:10px;color:#1C1B18;">→</span></div>
+            <div class="list-row" style="border-bottom:none;"><div><div style="font-family:'Space Mono',monospace;font-size:10px;color:#1C1B18;font-weight:700;">12 items</div><div style="font-family:'Space Mono',monospace;font-size:8px;color:#888;">03/22</div></div><span style="font-family:'Space Mono',monospace;font-size:10px;color:#1C1B18;">→</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:46<span>●●● ▊</span></div>
+      <div class="inner" style="padding:8px 14px 20px;">
+        <div class="pills">
+          <span class="pill" style="background:#1C1B18;color:#F5F4F0;border-radius:0;font-family:'Space Mono',monospace;font-weight:700;">14 items</span>
+          <span class="pill" style="background:#F5F4F0;color:#1C1B18;border:1.5px solid #1C1B18;border-radius:0;font-family:'Space Mono',monospace;font-weight:700;">5 stops</span>
+        </div>
+        <div class="prog-wrap">
+          <div class="prog-bg" style="background:#E0E0D8;height:6px;border:1.5px solid #1C1B18;border-radius:0;"><div class="prog-fill" style="background:#1C1B18;"></div></div>
+          <div class="prog-lbl" style="font-family:'Space Mono',monospace;color:#888;"><span>4/14</span><span>10 left</span></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">PRODUCE</span><span class="stop-b">01</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">baby spinach</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">avocado</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">lime</div></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">MEAT</span><span class="stop-b">02</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb"></div><div class="ri-n">chicken thighs</div></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">DAIRY D4</span><span class="stop-b">03</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">milk</div></div>
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">eggs</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">greek yogurt</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SOFT SYSTEM ══ -->
+<div class="theme-col ss">
+  <div class="theme-label">4 · Soft System</div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:41<span>●●● ▊</span></div>
+      <div class="body">
+        <div style="font-family:'DM Sans',sans-serif;font-size:30px;font-weight:700;color:#000;letter-spacing:-.03em;line-height:1;margin-bottom:3px;">Aisly</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:#8E8E93;margin-bottom:14px;">Your grocery route, ready.</div>
+        <div class="hero">
+          <div class="hero-lbl" style="font-family:'DM Sans',sans-serif;">Your store</div>
+          <div class="hero-name" style="font-family:'DM Sans',sans-serif;font-weight:600;color:#000;">Walmart Milpitas</div>
+          <div class="hero-dist" style="font-family:'DM Sans',sans-serif;color:#8E8E93;">0.8 mi · 301 Ranch Dr</div>
+        </div>
+        <button class="cta" style="font-family:'DM Sans',sans-serif;font-weight:600;background:#007AFF;color:#fff;border-radius:14px;">Plan a trip</button>
+        <div class="sec-lbl" style="font-family:'DM Sans',sans-serif;color:#8E8E93;padding-left:4px;">Recents</div>
+        <div class="list-card">
+          <div class="list-row"><div><div class="list-name" style="font-family:'DM Sans',sans-serif;color:#000;">18 items</div><div class="list-meta" style="font-family:'DM Sans',sans-serif;color:#8E8E93;">Tue, Mar 25</div></div><span style="color:#C7C7CC;font-size:14px;">›</span></div>
+          <div class="list-row" style="border-bottom:none;"><div><div class="list-name" style="font-family:'DM Sans',sans-serif;color:#000;">12 items</div><div class="list-meta" style="font-family:'DM Sans',sans-serif;color:#8E8E93;">Sat, Mar 22</div></div><span style="color:#C7C7CC;font-size:14px;">›</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:46<span>●●● ▊</span></div>
+      <div class="body">
+        <div class="pills">
+          <span class="pill" style="background:#E8F5E9;color:#34C759;font-family:'DM Sans',sans-serif;">14 items</span>
+          <span class="pill" style="background:#fff;color:#8E8E93;font-family:'DM Sans',sans-serif;">5 stops</span>
+          <span class="pill" style="background:#fff;color:#8E8E93;font-family:'DM Sans',sans-serif;">~12 min</span>
+        </div>
+        <div class="prog-wrap">
+          <div class="prog-bg" style="background:#E5E5EA;"><div class="prog-fill" style="background:#34C759;"></div></div>
+          <div class="prog-lbl" style="font-family:'DM Sans',sans-serif;color:#8E8E93;"><span>4 of 14</span><span>10 left</span></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Produce</span><span class="stop-b">Stop 1</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">baby spinach</div><div class="ri-l">Produce</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">avocado</div><div class="ri-l">Produce</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">lime</div><div class="ri-l">Produce</div></div>
+        </div>
+        <div class="stop-h"><span class="stop-z">Meat &amp; Seafood</span><span class="stop-b">Stop 2</span></div>
+        <div class="stop-i"><div class="ri"><div class="cb"></div><div class="ri-n">chicken thighs</div><div class="ri-l">Meat</div></div></div>
+        <div class="stop-h"><span class="stop-z">Dairy · D4</span><span class="stop-b">Stop 3</span></div>
+        <div class="stop-i">
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">milk</div><div class="ri-l">D4</div></div>
+          <div class="ri"><div class="cb chk"></div><div class="ri-n s">eggs</div><div class="ri-l">D4</div></div>
+          <div class="ri"><div class="cb"></div><div class="ri-n">greek yogurt</div><div class="ri-l">D4</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CARTOGRAPHY ══ -->
+<div class="theme-col ca">
+  <div class="theme-label">5 · Cartography</div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:41<span>●●● ▊</span></div>
+      <div class="body">
+        <div style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:#1A1208;letter-spacing:-.02em;line-height:1;margin-bottom:3px;">Aisly</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:#8A7A62;font-style:italic;font-weight:300;margin-bottom:14px;">Navigate your grocery run</div>
+        <div class="hero">
+          <div class="hero-lbl" style="font-family:'DM Sans',sans-serif;">Your store</div>
+          <div class="hero-name" style="font-family:'Fraunces',serif;font-weight:500;color:#EEF0E8;">Walmart Milpitas</div>
+          <div class="hero-dist" style="font-family:'DM Sans',sans-serif;color:rgba(200,210,180,.5);font-weight:300;">0.8 mi · 301 Ranch Dr</div>
+        </div>
+        <button class="cta" style="font-family:'Fraunces',serif;font-weight:500;font-size:15px;background:#5C7A3A;color:#EEF0E8;border-radius:10px;">Plan a trip</button>
+        <div class="sec-lbl" style="font-family:'DM Sans',sans-serif;color:#8A7A62;">Recent trips</div>
+        <div class="list-card">
+          <div class="list-row"><div><div class="list-name" style="font-family:'DM Sans',sans-serif;color:#1A1208;">18 items</div><div class="list-meta" style="font-family:'DM Sans',sans-serif;color:#8A7A62;">Tue, Mar 25</div></div><span class="arr">›</span></div>
+          <div class="list-row" style="border-bottom:none;"><div><div class="list-name" style="font-family:'DM Sans',sans-serif;color:#1A1208;">12 items</div><div class="list-meta" style="font-family:'DM Sans',sans-serif;color:#8A7A62;">Sat, Mar 22</div></div><span class="arr">›</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="phone">
+    <div class="di"></div>
+    <div class="screen">
+      <div class="sbar">9:46<span>●●● ▊</span></div>
+      <div class="body">
+        <div class="pills">
+          <span class="pill" style="background:#E4EDD8;color:#5C7A3A;border:1px solid #B8CCA0;font-family:'DM Sans',sans-serif;">14 items</span>
+          <span class="pill" style="background:#E8E2D4;color:#6A5A48;border:1px solid #C8BEA8;font-family:'DM Sans',sans-serif;">5 stops</span>
+          <span class="pill" style="background:#E8E2D4;color:#6A5A48;border:1px solid #C8BEA8;font-family:'DM Sans',sans-serif;">~12 min</span>
+        </div>
+        <div class="prog-wrap">
+          <div class="prog-bg" style="background:#D8D0C0;"><div class="prog-fill" style="background:#5C7A3A;"></div></div>
+          <div class="prog-lbl" style="font-family:'DM Sans',sans-serif;color:#8A7A62;"><span>4 of 14</span><span>10 left</span></div>
+        </div>
+        <div class="route-line">
+          <div class="stop-group"><div class="pin done"></div>
+            <div class="stop-h"><span class="stop-z">Produce</span><span class="stop-b">Stop 1</span></div>
+            <div class="stop-i">
+              <div class="ri"><div class="cb chk"></div><div class="ri-n s">baby spinach</div><div class="ri-l">Produce</div></div>
+              <div class="ri"><div class="cb"></div><div class="ri-n">avocado</div><div class="ri-l">Produce</div></div>
+            </div>
+          </div>
+          <div style="height:8px;"></div>
+          <div class="stop-group"><div class="pin"></div>
+            <div class="stop-h"><span class="stop-z">Meat &amp; Seafood</span><span class="stop-b">Stop 2</span></div>
+            <div class="stop-i"><div class="ri"><div class="cb"></div><div class="ri-n">chicken thighs</div><div class="ri-l">Meat</div></div></div>
+          </div>
+          <div style="height:8px;"></div>
+          <div class="stop-group"><div class="pin"></div>
+            <div class="stop-h"><span class="stop-z">Dairy · D4</span><span class="stop-b">Stop 3</span></div>
+            <div class="stop-i">
+              <div class="ri"><div class="cb chk"></div><div class="ri-n s">milk</div><div class="ri-l">D4</div></div>
+              <div class="ri"><div class="cb chk"></div><div class="ri-n s">eggs</div><div class="ri-l">D4</div></div>
+              <div class="ri"><div class="cb"></div><div class="ri-n">greek yogurt</div><div class="ri-l">D4</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
