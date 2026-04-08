@@ -386,23 +386,66 @@ footer {
 
   <div class="card exercise">
     <div class="label">🏋️ Exercise 1 — Build your first table</div>
-    <p>Create a table called <strong>tblCustomers</strong> with these fields:</p>
+    <p>We're going to create a table called <strong>tblCustomers</strong>. Follow these steps exactly:</p>
+
+    <h3>Part A: Create a new database</h3>
+    <p><strong>Step 1.</strong> Open Microsoft Access. You'll see a start screen. Click <strong>"Blank database"</strong>.</p>
+    <p><strong>Step 2.</strong> It will ask you to name your file. Type <code>MBA_Practice.accdb</code> and choose where to save it (your Desktop is fine). Click <strong>Create</strong>.</p>
+    <p><strong>Step 3.</strong> Access opens with a default table called "Table1" in Datasheet View (it looks like a spreadsheet). We don't want this view — we want Design View so we can set up our fields properly.</p>
+    <p><strong>Step 4.</strong> Close this table: click the <strong>X</strong> on the "Table1" tab (not the main Access X — the small one on the tab). If it asks to save, click <strong>No</strong>.</p>
+
+    <h3>Part B: Create the table in Design View</h3>
+    <p><strong>Step 5.</strong> Look at the top menu ribbon. Click the <strong>Create</strong> tab. Then click <strong>Table Design</strong>. A blank grid appears with three columns: Field Name, Data Type, and Description.</p>
+    <p><strong>Step 6.</strong> Now type in each field, one per row. After typing the Field Name, press <strong>Tab</strong> to move to the Data Type column, then use the dropdown to pick the right type:</p>
+
     <div class="table-wrap">
       <table>
         <thead><tr><th>Field Name</th><th>Data Type</th><th>Notes</th></tr></thead>
         <tbody>
-          <tr><td>CustomerID</td><td>AutoNumber</td><td>Primary Key</td></tr>
-          <tr><td>FirstName</td><td>Short Text (50)</td><td>Required</td></tr>
-          <tr><td>LastName</td><td>Short Text (50)</td><td>Required</td></tr>
-          <tr><td>Email</td><td>Short Text (100)</td><td></td></tr>
-          <tr><td>Phone</td><td>Short Text (15)</td><td></td></tr>
-          <tr><td>City</td><td>Short Text (50)</td><td></td></tr>
-          <tr><td>SignUpDate</td><td>Date/Time</td><td>Default: <code>Date()</code></td></tr>
-          <tr><td>IsActive</td><td>Yes/No</td><td>Default: Yes</td></tr>
+          <tr><td>CustomerID</td><td>AutoNumber</td><td>Primary Key (we'll set this next)</td></tr>
+          <tr><td>FirstName</td><td>Short Text</td><td>Required</td></tr>
+          <tr><td>LastName</td><td>Short Text</td><td>Required</td></tr>
+          <tr><td>Email</td><td>Short Text</td><td></td></tr>
+          <tr><td>Phone</td><td>Short Text</td><td></td></tr>
+          <tr><td>City</td><td>Short Text</td><td></td></tr>
+          <tr><td>SignUpDate</td><td>Date/Time</td><td></td></tr>
+          <tr><td>IsActive</td><td>Yes/No</td><td></td></tr>
         </tbody>
       </table>
     </div>
-    <p>Then add 5 sample customers. Use <strong>Design View</strong> to create fields, then switch to <strong>Datasheet View</strong> to enter data.</p>
+
+    <p><strong>Step 7. Set the Primary Key:</strong> Click on the row for <code>CustomerID</code> (click on the grey box to the left of "CustomerID" to select the whole row). Then in the ribbon at the top, click the <strong>Primary Key</strong> button (it looks like a small key icon). You should see a key icon appear next to CustomerID.</p>
+
+    <h3>Part C: Set field properties</h3>
+    <p>When you click on a field name, the bottom half of the screen shows <strong>Field Properties</strong>. Let's configure a few:</p>
+    <p><strong>Step 8.</strong> Click on <strong>FirstName</strong>. In the properties at the bottom, find <strong>Field Size</strong> and change it from 255 to <code>50</code>. Find <strong>Required</strong> and change it to <strong>Yes</strong>.</p>
+    <p><strong>Step 9.</strong> Click on <strong>LastName</strong>. Same thing: set <strong>Field Size</strong> to <code>50</code> and <strong>Required</strong> to <strong>Yes</strong>.</p>
+    <p><strong>Step 10.</strong> Click on <strong>Email</strong>. Set <strong>Field Size</strong> to <code>100</code>.</p>
+    <p><strong>Step 11.</strong> Click on <strong>Phone</strong>. Set <strong>Field Size</strong> to <code>15</code>.</p>
+    <p><strong>Step 12.</strong> Click on <strong>City</strong>. Set <strong>Field Size</strong> to <code>50</code>.</p>
+    <p><strong>Step 13.</strong> Click on <strong>SignUpDate</strong>. Find <strong>Default Value</strong> in the properties and type <code>Date()</code>. This means new records will automatically fill in today's date.</p>
+    <p><strong>Step 14.</strong> Click on <strong>IsActive</strong>. Set <strong>Default Value</strong> to <code>Yes</code>.</p>
+
+    <h3>Part D: Save and name the table</h3>
+    <p><strong>Step 15.</strong> Press <strong>Ctrl + S</strong> (or click the save icon). A dialog box asks for the table name. Type <code>tblCustomers</code> and click <strong>OK</strong>.</p>
+
+    <h3>Part E: Enter sample data</h3>
+    <p><strong>Step 16.</strong> Switch to Datasheet View so you can type in data: click the <strong>View</strong> button in the top-left of the ribbon (or right-click the tab and choose <strong>Datasheet View</strong>). If it asks to save, click <strong>Yes</strong>.</p>
+    <p><strong>Step 17.</strong> You'll see a spreadsheet-like grid. The <code>CustomerID</code> column will say "(AutoNumber)" — you don't type anything there; Access fills it in automatically. Click in the <strong>FirstName</strong> column and start typing your first customer.</p>
+    <p><strong>Step 18.</strong> Enter 5 customers. Here are some you can use:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>FirstName</th><th>LastName</th><th>Email</th><th>Phone</th><th>City</th></tr></thead>
+        <tbody>
+          <tr><td>Sarah</td><td>Johnson</td><td>sarah@email.com</td><td>408-555-0101</td><td>San Jose</td></tr>
+          <tr><td>Mike</td><td>Chen</td><td>mike@email.com</td><td>408-555-0102</td><td>Milpitas</td></tr>
+          <tr><td>Lisa</td><td>Park</td><td>lisa@email.com</td><td>510-555-0103</td><td>Fremont</td></tr>
+          <tr><td>James</td><td>Wilson</td><td>james@email.com</td><td>408-555-0104</td><td>San Jose</td></tr>
+          <tr><td>Amy</td><td>Garcia</td><td>amy@email.com</td><td>650-555-0105</td><td>Palo Alto</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>After typing each row, just press <strong>Tab</strong> past the last column or click on the next row — Access auto-saves each record as you move to a new row. You're done with Exercise 1!</p>
   </div>
 
   <div class="card tip">
@@ -467,10 +510,56 @@ footer {
 
   <div class="card exercise">
     <div class="label">🏋️ Exercise 2 — Create a relationship</div>
-    <p>1. Create <strong>tblOrders</strong> with: <code>OrderID</code> (AutoNumber, PK), <code>CustomerID</code> (Number — this is the foreign key), <code>OrderDate</code> (Date/Time), <code>TotalAmount</code> (Currency).</p>
-    <p>2. Open <strong>Database Tools → Relationships</strong>, add both tables, and drag <code>CustomerID</code> from tblCustomers onto <code>CustomerID</code> in tblOrders.</p>
-    <p>3. Check <strong>Enforce Referential Integrity</strong> and <strong>Cascade Delete</strong>. Click Create.</p>
-    <p>4. Enter 8 orders across your 5 customers (some customers should have multiple orders).</p>
+
+    <h3>Part A: Create the tblOrders table</h3>
+    <p><strong>Step 1.</strong> Click the <strong>Create</strong> tab in the ribbon, then click <strong>Table Design</strong>.</p>
+    <p><strong>Step 2.</strong> Enter these fields (same process as Exercise 1 — type the name, Tab to Data Type, pick from dropdown):</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Field Name</th><th>Data Type</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>OrderID</td><td>AutoNumber</td><td>Primary Key</td></tr>
+          <tr><td>CustomerID</td><td>Number</td><td>This links to tblCustomers</td></tr>
+          <tr><td>OrderDate</td><td>Date/Time</td><td></td></tr>
+          <tr><td>TotalAmount</td><td>Currency</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Step 3.</strong> Set <code>OrderID</code> as the Primary Key: click the grey box next to OrderID to select the row, then click the <strong>Primary Key</strong> button in the ribbon (key icon).</p>
+    <p><strong>Step 4.</strong> Press <strong>Ctrl + S</strong>. Name the table <code>tblOrders</code>. Click OK.</p>
+
+    <h3>Part B: Create the relationship</h3>
+    <p><strong>Step 5.</strong> Close any open tables by clicking the X on their tabs.</p>
+    <p><strong>Step 6.</strong> Click the <strong>Database Tools</strong> tab in the ribbon. Then click <strong>Relationships</strong>. A blank canvas opens.</p>
+    <p><strong>Step 7.</strong> A "Show Table" dialog box should appear (if it doesn't, right-click on the blank canvas and choose <strong>Show Table</strong>). You'll see your tables listed.</p>
+    <p><strong>Step 8.</strong> Double-click <strong>tblCustomers</strong> to add it to the canvas. Then double-click <strong>tblOrders</strong>. Close the Show Table dialog.</p>
+    <p><strong>Step 9.</strong> You should see two boxes on the canvas showing the field names. Now here's the key step: <strong>click and hold</strong> on <code>CustomerID</code> in the <strong>tblCustomers</strong> box, and <strong>drag it</strong> onto <code>CustomerID</code> in the <strong>tblOrders</strong> box. Release the mouse.</p>
+    <p><strong>Step 10.</strong> A dialog called "Edit Relationships" appears. Check these boxes:</p>
+    <p style="padding-left: 20px;">☑ <strong>Enforce Referential Integrity</strong> — this prevents creating an order for a customer that doesn't exist.<br>
+    ☑ <strong>Cascade Update Related Fields</strong> — if a customer ID changes, orders update too.<br>
+    ☑ <strong>Cascade Delete Related Records</strong> — if you delete a customer, their orders get deleted too.</p>
+    <p><strong>Step 11.</strong> Click <strong>Create</strong>. You'll see a line connecting the two tables with "1" on the tblCustomers side and "∞" on the tblOrders side. That means one customer can have many orders.</p>
+    <p><strong>Step 12.</strong> Press <strong>Ctrl + S</strong> to save the relationship layout. Close the Relationships window.</p>
+
+    <h3>Part C: Enter order data</h3>
+    <p><strong>Step 13.</strong> In the left navigation pane, double-click <strong>tblOrders</strong> to open it in Datasheet View.</p>
+    <p><strong>Step 14.</strong> Enter 8 orders. For the <code>CustomerID</code> column, type the number that matches the customer (1 for Sarah, 2 for Mike, etc. — these are the AutoNumber IDs from tblCustomers). Give some customers more than one order:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>CustomerID</th><th>OrderDate</th><th>TotalAmount</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>3/1/2026</td><td>45.99</td></tr>
+          <tr><td>1</td><td>3/10/2026</td><td>72.50</td></tr>
+          <tr><td>2</td><td>3/5/2026</td><td>128.00</td></tr>
+          <tr><td>3</td><td>3/8/2026</td><td>33.25</td></tr>
+          <tr><td>3</td><td>3/15/2026</td><td>89.99</td></tr>
+          <tr><td>4</td><td>3/12/2026</td><td>56.00</td></tr>
+          <tr><td>5</td><td>3/18/2026</td><td>210.75</td></tr>
+          <tr><td>5</td><td>3/22/2026</td><td>15.50</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Notice: if you try typing a CustomerID that doesn't exist (like 99), Access will give you an error — that's referential integrity doing its job!</p>
   </div>
 
   <div class="quiz" data-answer="2">
@@ -527,9 +616,37 @@ FullName: [FirstName] &amp; " " &amp; [LastName]</pre>
 
   <div class="card exercise">
     <div class="label">🏋️ Exercise 3 — Build three queries</div>
-    <p><strong>A.</strong> <code>qryHighValueOrders</code> — Show all orders where TotalAmount > $50. Include customer first/last name (you'll need both tables).</p>
-    <p><strong>B.</strong> <code>qrySpendByCustomer</code> — A Totals query: Group By CustomerID, FirstName, LastName. Sum of TotalAmount.</p>
-    <p><strong>C.</strong> <code>qryOrdersByCity</code> — A Parameter query that asks <code>[Enter a city:]</code> and shows all orders from customers in that city.</p>
+
+    <h3>Query A: qryHighValueOrders</h3>
+    <p>This query will show all orders over $50, along with the customer's name.</p>
+    <p><strong>Step 1.</strong> Click the <strong>Create</strong> tab in the ribbon, then click <strong>Query Design</strong>.</p>
+    <p><strong>Step 2.</strong> The "Show Table" dialog appears. Double-click <strong>tblCustomers</strong>, then double-click <strong>tblOrders</strong>. Close the dialog. You'll see both tables on the canvas with a line connecting them (Access knows they're related).</p>
+    <p><strong>Step 3.</strong> Now you need to pick which fields to show. In the <strong>tblCustomers</strong> box, double-click <strong>FirstName</strong> — it drops into the grid at the bottom. Double-click <strong>LastName</strong>. Then in the <strong>tblOrders</strong> box, double-click <strong>OrderDate</strong> and <strong>TotalAmount</strong>.</p>
+    <p><strong>Step 4.</strong> In the grid at the bottom, find the <strong>TotalAmount</strong> column. In the <strong>Criteria</strong> row (scroll down in the grid if you don't see it), type: <code>&gt;50</code></p>
+    <p><strong>Step 5.</strong> Click the <strong>Run</strong> button in the ribbon (it looks like a red exclamation mark <strong>!</strong>). You should see only orders over $50 with customer names.</p>
+    <p><strong>Step 6.</strong> Save it: press <strong>Ctrl + S</strong>. Name it <code>qryHighValueOrders</code>. Click OK.</p>
+
+    <h3>Query B: qrySpendByCustomer</h3>
+    <p>This query will show the total amount each customer has spent across all their orders.</p>
+    <p><strong>Step 1.</strong> Click <strong>Create → Query Design</strong>. Add both tables again (same as before). Close the Show Table dialog.</p>
+    <p><strong>Step 2.</strong> Double-click these fields to add them to the grid: <strong>CustomerID</strong> (from tblCustomers), <strong>FirstName</strong>, <strong>LastName</strong>, and <strong>TotalAmount</strong> (from tblOrders).</p>
+    <p><strong>Step 3.</strong> Now we need to turn on Totals. In the ribbon, look for the <strong>Σ Totals</strong> button (it's in the "Show/Hide" group on the Design tab) and click it. A new row called <strong>"Total"</strong> appears in the grid.</p>
+    <p><strong>Step 4.</strong> By default, every column says "Group By" in the Total row. That's correct for CustomerID, FirstName, and LastName. But for <strong>TotalAmount</strong>, click the dropdown in the Total row and change it from "Group By" to <strong>Sum</strong>.</p>
+    <p><strong>Step 5.</strong> Click <strong>Run (!)</strong>. You should see one row per customer with their total spend.</p>
+    <p><strong>Step 6.</strong> Save as <code>qrySpendByCustomer</code>.</p>
+
+    <h3>Query C: qryOrdersByCity</h3>
+    <p>This query will ask you to type in a city name when you run it, then show only orders from customers in that city.</p>
+    <p><strong>Step 1.</strong> Click <strong>Create → Query Design</strong>. Add both tables. Close the dialog.</p>
+    <p><strong>Step 2.</strong> Add these fields to the grid: <strong>FirstName</strong>, <strong>LastName</strong>, <strong>City</strong> (from tblCustomers), <strong>OrderDate</strong>, <strong>TotalAmount</strong> (from tblOrders).</p>
+    <p><strong>Step 3.</strong> In the <strong>Criteria</strong> row under <strong>City</strong>, type exactly this (including the square brackets): <code>[Enter a city:]</code></p>
+    <p><strong>Step 4.</strong> Click <strong>Run (!)</strong>. A small dialog box pops up asking "Enter a city:" — type <code>San Jose</code> and click OK. You should see only orders from San Jose customers.</p>
+    <p><strong>Step 5.</strong> Save as <code>qryOrdersByCity</code>.</p>
+
+    <div class="card tip">
+      <div class="label">💡 What just happened?</div>
+      The square brackets <code>[ ]</code> tell Access: "don't look for this literally — instead, ask the user to type something in." Whatever they type gets used as the filter. This is called a <strong>parameter query</strong>.
+    </div>
   </div>
 
   <div class="quiz" data-answer="1">
@@ -561,10 +678,29 @@ FullName: [FirstName] &amp; " " &amp; [LastName]</pre>
 
   <div class="card exercise">
     <div class="label">🏋️ Exercise 4 — Build a data-entry form</div>
-    <p>1. Select <strong>tblOrders</strong> → Create → Form.</p>
-    <p>2. In Layout View: replace the <code>CustomerID</code> text box with a <strong>Combo Box</strong> that shows customer names but stores the ID.</p>
-    <p>3. Add a title at the top: "New Order Entry".</p>
-    <p>4. Test it: add 2 new orders using the form.</p>
+
+    <h3>Part A: Create the basic form</h3>
+    <p><strong>Step 1.</strong> In the left <strong>Navigation Pane</strong>, click once on <strong>tblOrders</strong> to select it (just single-click — don't open it).</p>
+    <p><strong>Step 2.</strong> Click the <strong>Create</strong> tab in the ribbon, then click <strong>Form</strong>. Access instantly creates a form for you! It shows one order record at a time with a nice layout.</p>
+    <p><strong>Step 3.</strong> You're now in <strong>Layout View</strong> (you can edit the form's design). If you're not, click <strong>View → Layout View</strong> in the ribbon.</p>
+
+    <h3>Part B: Replace CustomerID with a dropdown</h3>
+    <p>Right now, the form shows a plain text box for CustomerID where you'd have to type a number. Let's replace it with a dropdown that shows customer names instead.</p>
+    <p><strong>Step 4.</strong> Right-click on the <strong>CustomerID text box</strong> (the white box, not the label). In the menu, choose <strong>Change To → Combo Box</strong>.</p>
+    <p><strong>Step 5.</strong> Now we need to tell the combo box where to get its list. Right-click the combo box again and choose <strong>Properties</strong>. A Property Sheet panel opens on the right side.</p>
+    <p><strong>Step 6.</strong> In the Property Sheet, click the <strong>Data</strong> tab. Find <strong>Row Source Type</strong> — make sure it says <code>Table/Query</code>.</p>
+    <p><strong>Step 7.</strong> Find <strong>Row Source</strong> (right below it). Click in that box, then click the small <strong>...</strong> button that appears. This opens the Query Builder.</p>
+    <p><strong>Step 8.</strong> Add <strong>tblCustomers</strong>. Double-click <strong>CustomerID</strong>, <strong>FirstName</strong>, and <strong>LastName</strong> to add them to the grid. Close the Query Builder and click <strong>Yes</strong> to save.</p>
+    <p><strong>Step 9.</strong> Back in the Property Sheet, click the <strong>Format</strong> tab. Set <strong>Column Count</strong> to <code>3</code>. Set <strong>Column Widths</strong> to <code>0";1";1"</code> — this hides the ID column and shows the first and last names.</p>
+
+    <h3>Part C: Add a title</h3>
+    <p><strong>Step 10.</strong> In the ribbon, click the <strong>Design</strong> tab (under Form Layout Tools). Click <strong>Title</strong>. A text box appears at the top of the form. Type <code>New Order Entry</code> and press Enter.</p>
+
+    <h3>Part D: Test it</h3>
+    <p><strong>Step 11.</strong> Switch to <strong>Form View</strong>: click <strong>View → Form View</strong> in the ribbon.</p>
+    <p><strong>Step 12.</strong> Navigate to a blank record: click the <strong>►|</strong> button at the bottom of the form (the "New Record" button), or press <strong>Ctrl + +</strong> (Ctrl and the plus key).</p>
+    <p><strong>Step 13.</strong> Click the <strong>CustomerID dropdown</strong> — you should see customer names! Pick a customer, enter an order date and total amount. Click onto the next record or press Tab past the last field to save.</p>
+    <p><strong>Step 14.</strong> Add one more order the same way. Then save the form: <strong>Ctrl + S</strong>. Name it <code>frmOrders</code>.</p>
   </div>
 </section>
 
@@ -589,12 +725,30 @@ FullName: [FirstName] &amp; " " &amp; [LastName]</pre>
 
   <div class="card exercise">
     <div class="label">🏋️ Exercise 5 — Build a grouped report</div>
-    <p>1. Base it on <code>qryHighValueOrders</code>.</p>
-    <p>2. Group by <strong>LastName</strong>.</p>
-    <p>3. Add a subtotal of TotalAmount at each customer group.</p>
-    <p>4. Add a grand total in the Report Footer.</p>
-    <p>5. Add page numbers and today's date in the Page Footer.</p>
-    <p>6. Export to PDF: <strong>External Data → PDF or XPS</strong>.</p>
+
+    <h3>Part A: Create the report</h3>
+    <p><strong>Step 1.</strong> In the left Navigation Pane, click once on <strong>qryHighValueOrders</strong> to select it.</p>
+    <p><strong>Step 2.</strong> Click the <strong>Create</strong> tab, then click <strong>Report</strong>. Access generates a report instantly — it shows all the query data in a formatted table.</p>
+    <p><strong>Step 3.</strong> You're in <strong>Layout View</strong>. You can click on column headers to resize them (drag the edges), or rearrange columns by dragging.</p>
+
+    <h3>Part B: Add grouping</h3>
+    <p><strong>Step 4.</strong> In the ribbon, look for the <strong>Group &amp; Sort</strong> button (it's on the Design tab, in the "Grouping &amp; Totals" group). Click it. A panel appears at the bottom of the screen.</p>
+    <p><strong>Step 5.</strong> Click <strong>"Add a group"</strong>. A dropdown appears listing all your fields. Pick <strong>LastName</strong>. The report instantly rearranges — orders are now grouped under each customer's last name, with a header for each group.</p>
+
+    <h3>Part C: Add subtotals and grand total</h3>
+    <p><strong>Step 6.</strong> In the Group &amp; Sort panel at the bottom, find the "LastName" grouping row. Click <strong>"More"</strong> to expand options. Find <strong>"with no totals"</strong> and click it. A dialog opens.</p>
+    <p><strong>Step 7.</strong> In the Totals dialog: set <strong>Total On</strong> to <code>TotalAmount</code>. Set <strong>Type</strong> to <code>Sum</code>. Check the box for <strong>"Show Grand Total"</strong>. Check <strong>"Show subtotal in group footer"</strong>. Click outside the dialog to close it.</p>
+    <p>You should now see a subtotal after each customer's orders, and a grand total at the very end of the report.</p>
+
+    <h3>Part D: Add page numbers and date</h3>
+    <p><strong>Step 8.</strong> Switch to <strong>Design View</strong>: click <strong>View → Design View</strong>. You'll see the report broken into sections (Report Header, Page Header, Detail, Page Footer, Report Footer).</p>
+    <p><strong>Step 9.</strong> If you don't see a <strong>Page Footer</strong> section, right-click on the report background and choose <strong>Page Header/Footer</strong> to turn it on.</p>
+    <p><strong>Step 10.</strong> Click in the <strong>Page Footer</strong> section. In the ribbon, click the <strong>Design</strong> tab, then click <strong>Date and Time</strong>. Pick a format you like and click OK. A text box with the date appears — drag it to the left side of the Page Footer.</p>
+    <p><strong>Step 11.</strong> Still in the Design tab, click <strong>Page Numbers</strong>. Choose format <code>Page N of M</code>, position <strong>Bottom of Page</strong>, alignment <strong>Right</strong>. Click OK.</p>
+
+    <h3>Part E: Save and export to PDF</h3>
+    <p><strong>Step 12.</strong> Press <strong>Ctrl + S</strong>. Name the report <code>rptHighValueOrders</code>.</p>
+    <p><strong>Step 13.</strong> Switch back to <strong>Report View</strong> or <strong>Print Preview</strong> to see how it looks. To export as PDF: click the <strong>External Data</strong> tab in the ribbon, then click <strong>PDF or XPS</strong>. Choose where to save it, make sure the format says PDF, and click <strong>Publish</strong>.</p>
   </div>
 </section>
 
@@ -651,10 +805,43 @@ HAVING SUM(o.TotalAmount) > 100;</pre>
 
   <div class="card exercise">
     <div class="label">🏋️ Exercise 6 — Write SQL by hand</div>
-    <p>Create a new query in SQL View (Create → Query Design → close the table dialog → View → SQL View) and type these:</p>
-    <p><strong>A.</strong> List all customers sorted by city, then last name.</p>
-    <p><strong>B.</strong> Show all orders placed in the last 30 days: <code>WHERE OrderDate >= Date() - 30</code></p>
-    <p><strong>C.</strong> Count orders per customer (use GROUP BY and COUNT).</p>
+
+    <h3>How to open SQL View</h3>
+    <p><strong>Step 1.</strong> Click the <strong>Create</strong> tab, then click <strong>Query Design</strong>.</p>
+    <p><strong>Step 2.</strong> The "Show Table" dialog appears — just <strong>close it</strong> without adding any tables (click Close). You'll see an empty query grid.</p>
+    <p><strong>Step 3.</strong> In the bottom-left corner of the Access window, you'll see small view icons, OR you can go to <strong>View</strong> in the ribbon → click the dropdown arrow → choose <strong>SQL View</strong>. You now see a blank text area where you can type SQL directly.</p>
+
+    <h3>Query A: Customers sorted by city, then last name</h3>
+    <p><strong>Step 4.</strong> Delete anything in the SQL text area, then type:</p>
+    <pre>SELECT FirstName, LastName, City, Email
+FROM tblCustomers
+ORDER BY City, LastName;</pre>
+    <p><strong>Step 5.</strong> Click <strong>Run (!)</strong> in the ribbon. You should see all your customers sorted alphabetically by city, and within each city, sorted by last name.</p>
+    <p><strong>Step 6.</strong> Save as <code>qryCustomersByCity</code>.</p>
+
+    <h3>Query B: Recent orders (last 30 days)</h3>
+    <p><strong>Step 7.</strong> Create another new query: <strong>Create → Query Design</strong>. Close the Show Table dialog. Switch to <strong>SQL View</strong>.</p>
+    <p><strong>Step 8.</strong> Type:</p>
+    <pre>SELECT c.FirstName, c.LastName, o.OrderDate, o.TotalAmount
+FROM tblCustomers AS c
+INNER JOIN tblOrders AS o
+ON c.CustomerID = o.CustomerID
+WHERE o.OrderDate >= Date() - 30
+ORDER BY o.OrderDate DESC;</pre>
+    <p><strong>Step 9.</strong> Click <strong>Run (!)</strong>. This shows orders from the past 30 days, newest first. (If your sample dates are older than 30 days, you might see no results — that's OK, it means the SQL is working correctly. Try changing <code>30</code> to <code>365</code> to see results.)</p>
+    <p><strong>Step 10.</strong> Save as <code>qryRecentOrders</code>.</p>
+
+    <h3>Query C: Count orders per customer</h3>
+    <p><strong>Step 11.</strong> Create one more: <strong>Create → Query Design</strong>. Close Show Table. Switch to <strong>SQL View</strong>.</p>
+    <p><strong>Step 12.</strong> Type:</p>
+    <pre>SELECT c.FirstName, c.LastName, COUNT(o.OrderID) AS NumberOfOrders
+FROM tblCustomers AS c
+INNER JOIN tblOrders AS o
+ON c.CustomerID = o.CustomerID
+GROUP BY c.FirstName, c.LastName
+ORDER BY COUNT(o.OrderID) DESC;</pre>
+    <p><strong>Step 13.</strong> Click <strong>Run (!)</strong>. You should see each customer with how many orders they've placed, with the most frequent buyer at the top.</p>
+    <p><strong>Step 14.</strong> Save as <code>qryOrderCounts</code>.</p>
   </div>
 
   <div class="quiz" data-answer="2">
@@ -677,31 +864,150 @@ HAVING SUM(o.TotalAmount) > 100;</pre>
   <p>Put it all together. Build a small database for a fictional coffee shop called <strong>Bean & Brew</strong>.</p>
 
   <div class="card">
-    <h3>Step 1 — Create these tables</h3>
-    <p><strong>tblProducts</strong>: ProductID (AutoNumber, PK), ProductName (Short Text), Category (Short Text: "Coffee", "Tea", "Pastry"), Price (Currency).</p>
-    <p><strong>tblEmployees</strong>: EmployeeID (AutoNumber, PK), FirstName, LastName, HireDate (Date/Time).</p>
-    <p><strong>tblSales</strong>: SaleID (AutoNumber, PK), EmployeeID (Number, FK), ProductID (Number, FK), SaleDate (Date/Time), Quantity (Number).</p>
-    <p>Add 6 products, 3 employees, and 15 sales records.</p>
+    <h3>Step 1 — Create a new database and three tables</h3>
+    <p><strong>1a.</strong> Open Access. Click <strong>Blank database</strong>. Name it <code>BeanAndBrew.accdb</code>. Click Create. Close the default Table1 tab (click No if asked to save).</p>
+
+    <p><strong>1b. Create tblProducts:</strong> Click <strong>Create → Table Design</strong>. Enter these fields:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Field Name</th><th>Data Type</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>ProductID</td><td>AutoNumber</td><td>Click the row, then click Primary Key in the ribbon</td></tr>
+          <tr><td>ProductName</td><td>Short Text</td><td></td></tr>
+          <tr><td>Category</td><td>Short Text</td><td></td></tr>
+          <tr><td>Price</td><td>Currency</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Save as <code>tblProducts</code> (Ctrl + S). Switch to Datasheet View (View → Datasheet View) and enter these 6 products:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ProductName</th><th>Category</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Espresso</td><td>Coffee</td><td>$3.50</td></tr>
+          <tr><td>Latte</td><td>Coffee</td><td>$5.00</td></tr>
+          <tr><td>Cold Brew</td><td>Coffee</td><td>$4.75</td></tr>
+          <tr><td>Green Tea</td><td>Tea</td><td>$3.25</td></tr>
+          <tr><td>Croissant</td><td>Pastry</td><td>$4.00</td></tr>
+          <tr><td>Muffin</td><td>Pastry</td><td>$3.75</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>1c. Create tblEmployees:</strong> Click <strong>Create → Table Design</strong>. Enter these fields:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Field Name</th><th>Data Type</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>EmployeeID</td><td>AutoNumber</td><td>Primary Key</td></tr>
+          <tr><td>FirstName</td><td>Short Text</td><td></td></tr>
+          <tr><td>LastName</td><td>Short Text</td><td></td></tr>
+          <tr><td>HireDate</td><td>Date/Time</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Save as <code>tblEmployees</code>. Switch to Datasheet View and enter 3 employees:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>FirstName</th><th>LastName</th><th>HireDate</th></tr></thead>
+        <tbody>
+          <tr><td>Emma</td><td>Rodriguez</td><td>1/15/2025</td></tr>
+          <tr><td>Jake</td><td>Thompson</td><td>6/1/2025</td></tr>
+          <tr><td>Mia</td><td>Nguyen</td><td>9/10/2025</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>1d. Create tblSales:</strong> Click <strong>Create → Table Design</strong>. Enter these fields:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Field Name</th><th>Data Type</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>SaleID</td><td>AutoNumber</td><td>Primary Key</td></tr>
+          <tr><td>EmployeeID</td><td>Number</td><td>This links to tblEmployees</td></tr>
+          <tr><td>ProductID</td><td>Number</td><td>This links to tblProducts</td></tr>
+          <tr><td>SaleDate</td><td>Date/Time</td><td></td></tr>
+          <tr><td>Quantity</td><td>Number</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Save as <code>tblSales</code>. Switch to Datasheet View and enter 15 sales. Use EmployeeIDs 1-3 and ProductIDs 1-6. Here's sample data:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>EmployeeID</th><th>ProductID</th><th>SaleDate</th><th>Quantity</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>1</td><td>3/1/2026</td><td>2</td></tr>
+          <tr><td>1</td><td>5</td><td>3/1/2026</td><td>1</td></tr>
+          <tr><td>2</td><td>2</td><td>3/2/2026</td><td>3</td></tr>
+          <tr><td>3</td><td>4</td><td>3/2/2026</td><td>1</td></tr>
+          <tr><td>1</td><td>3</td><td>3/3/2026</td><td>2</td></tr>
+          <tr><td>2</td><td>6</td><td>3/3/2026</td><td>4</td></tr>
+          <tr><td>3</td><td>1</td><td>3/4/2026</td><td>1</td></tr>
+          <tr><td>1</td><td>2</td><td>3/4/2026</td><td>2</td></tr>
+          <tr><td>2</td><td>5</td><td>3/5/2026</td><td>3</td></tr>
+          <tr><td>3</td><td>3</td><td>3/5/2026</td><td>1</td></tr>
+          <tr><td>1</td><td>4</td><td>3/6/2026</td><td>2</td></tr>
+          <tr><td>2</td><td>1</td><td>3/6/2026</td><td>4</td></tr>
+          <tr><td>3</td><td>6</td><td>3/7/2026</td><td>2</td></tr>
+          <tr><td>1</td><td>2</td><td>3/7/2026</td><td>1</td></tr>
+          <tr><td>2</td><td>3</td><td>3/8/2026</td><td>2</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="card">
     <h3>Step 2 — Set up relationships</h3>
-    <p>tblEmployees 1:∞ tblSales (on EmployeeID)<br>
-    tblProducts 1:∞ tblSales (on ProductID)<br>
-    Enforce referential integrity on both.</p>
+    <p><strong>2a.</strong> Close all open tables (click the X on each tab).</p>
+    <p><strong>2b.</strong> Click <strong>Database Tools → Relationships</strong>.</p>
+    <p><strong>2c.</strong> In the Show Table dialog, double-click all three tables: <strong>tblEmployees</strong>, <strong>tblProducts</strong>, <strong>tblSales</strong>. Close the dialog.</p>
+    <p><strong>2d. First relationship:</strong> Click and drag <strong>EmployeeID</strong> from <strong>tblEmployees</strong> onto <strong>EmployeeID</strong> in <strong>tblSales</strong>. In the dialog, check <strong>Enforce Referential Integrity</strong>, <strong>Cascade Update</strong>, and <strong>Cascade Delete</strong>. Click Create.</p>
+    <p><strong>2e. Second relationship:</strong> Click and drag <strong>ProductID</strong> from <strong>tblProducts</strong> onto <strong>ProductID</strong> in <strong>tblSales</strong>. Same checkboxes: Enforce Referential Integrity, Cascade Update, Cascade Delete. Click Create.</p>
+    <p><strong>2f.</strong> You should see two lines connecting to tblSales — one from each table, both showing "1" on the Employees/Products side and "∞" on the Sales side. Press <strong>Ctrl + S</strong> to save. Close the Relationships window.</p>
   </div>
 
   <div class="card">
     <h3>Step 3 — Build these queries</h3>
-    <p><strong>qryRevenueByProduct</strong> — Calculate <code>Revenue: [Price] * [Quantity]</code>, then Group By ProductName, Sum of Revenue. Sort descending.</p>
-    <p><strong>qrySalesByEmployee</strong> — Count of sales and Sum of revenue per employee.</p>
-    <p><strong>qryCoffeeSalesOnly</strong> — All sales where Category = "Coffee".</p>
+
+    <p><strong>qryRevenueByProduct:</strong></p>
+    <p><strong>3a.</strong> Click <strong>Create → Query Design</strong>. Add <strong>tblProducts</strong> and <strong>tblSales</strong>. Close the dialog.</p>
+    <p><strong>3b.</strong> Double-click <strong>ProductName</strong> (from tblProducts), <strong>Price</strong> (from tblProducts), and <strong>Quantity</strong> (from tblSales) to add them to the grid.</p>
+    <p><strong>3c.</strong> We need a calculated field. Click in the next empty <strong>Field</strong> cell in the grid and type: <code>Revenue: [Price]*[Quantity]</code></p>
+    <p><strong>3d.</strong> Click the <strong>Σ Totals</strong> button in the ribbon. In the Total row: set ProductName to <strong>Group By</strong>. Set Price to <strong>Expression</strong> (since we don't need it separately). Actually, simpler approach: remove the Price and Quantity columns (select each column header and press Delete). Keep only ProductName and the Revenue calculated field.</p>
+    <p><strong>3e.</strong> With Totals on: set ProductName to <strong>Group By</strong> and Revenue to <strong>Sum</strong>.</p>
+    <p><strong>3f.</strong> In the <strong>Sort</strong> row under Revenue, choose <strong>Descending</strong>.</p>
+    <p><strong>3g.</strong> Click <strong>Run (!)</strong>. You should see each product with its total revenue, highest first. Save as <code>qryRevenueByProduct</code>.</p>
+
+    <p><strong>qrySalesByEmployee:</strong></p>
+    <p><strong>3h.</strong> Click <strong>Create → Query Design</strong>. Add <strong>tblEmployees</strong>, <strong>tblProducts</strong>, and <strong>tblSales</strong>. Close the dialog.</p>
+    <p><strong>3i.</strong> Add these fields to the grid: <strong>FirstName</strong>, <strong>LastName</strong> (from tblEmployees), <strong>SaleID</strong> (from tblSales). Then click in an empty Field cell and type: <code>Revenue: [Price]*[Quantity]</code></p>
+    <p><strong>3j.</strong> Click <strong>Σ Totals</strong>. Set FirstName and LastName to <strong>Group By</strong>. Set SaleID to <strong>Count</strong>. Set Revenue to <strong>Sum</strong>.</p>
+    <p><strong>3k.</strong> Click <strong>Run (!)</strong>. Save as <code>qrySalesByEmployee</code>.</p>
+
+    <p><strong>qryCoffeeSalesOnly:</strong></p>
+    <p><strong>3l.</strong> Click <strong>Create → Query Design</strong>. Add <strong>tblProducts</strong> and <strong>tblSales</strong>. Close the dialog.</p>
+    <p><strong>3m.</strong> Add to the grid: <strong>ProductName</strong>, <strong>Category</strong>, <strong>SaleDate</strong>, <strong>Quantity</strong>, <strong>Price</strong>.</p>
+    <p><strong>3n.</strong> In the <strong>Criteria</strong> row under Category, type: <code>"Coffee"</code></p>
+    <p><strong>3o.</strong> Click <strong>Run (!)</strong>. You should only see coffee products. Save as <code>qryCoffeeSalesOnly</code>.</p>
   </div>
 
   <div class="card">
     <h3>Step 4 — Create a form and report</h3>
-    <p><strong>frmNewSale</strong> — A form for entering new sales. Use combo boxes for EmployeeID (showing names) and ProductID (showing product names).</p>
-    <p><strong>rptRevenueByProduct</strong> — A report based on qryRevenueByProduct. Group by Category, with subtotals and a grand total.</p>
+
+    <p><strong>frmNewSale:</strong></p>
+    <p><strong>4a.</strong> In the Navigation Pane, click once on <strong>tblSales</strong>. Click <strong>Create → Form</strong>.</p>
+    <p><strong>4b.</strong> You're in Layout View. Right-click the <strong>EmployeeID</strong> text box → <strong>Change To → Combo Box</strong>.</p>
+    <p><strong>4c.</strong> Right-click the combo box → <strong>Properties</strong>. On the <strong>Data</strong> tab: set Row Source Type to <code>Table/Query</code>. Click the <strong>...</strong> next to Row Source, add tblEmployees, double-click EmployeeID, FirstName, and LastName. Close the builder and save.</p>
+    <p><strong>4d.</strong> On the <strong>Format</strong> tab: set Column Count to <code>3</code> and Column Widths to <code>0";1";1"</code>.</p>
+    <p><strong>4e.</strong> Repeat for <strong>ProductID</strong>: right-click → Change To → Combo Box. Properties → Data tab → Row Source: add tblProducts, double-click ProductID and ProductName. Format tab: Column Count <code>2</code>, Column Widths <code>0";2"</code>.</p>
+    <p><strong>4f.</strong> Click <strong>Design tab → Title</strong>. Type <code>New Sale</code>.</p>
+    <p><strong>4g.</strong> Save as <code>frmNewSale</code>. Switch to Form View and test it — the dropdowns should show employee names and product names!</p>
+
+    <p><strong>rptRevenueByProduct:</strong></p>
+    <p><strong>4h.</strong> In the Navigation Pane, click once on <strong>qryRevenueByProduct</strong>. Click <strong>Create → Report</strong>.</p>
+    <p><strong>4i.</strong> Click <strong>Group &amp; Sort</strong> in the ribbon. Click <strong>Add a group</strong> → choose <strong>ProductName</strong> (since our query is already grouped, this will organize the layout nicely).</p>
+    <p><strong>4j.</strong> To add a grand total: in the Group &amp; Sort panel, click <strong>More</strong> on the grouping row, then click <strong>"with no totals"</strong>. Set Total On to <code>SumOfRevenue</code>, Type to <code>Sum</code>, and check <strong>Show Grand Total</strong>. Close the dialog.</p>
+    <p><strong>4k.</strong> Save as <code>rptRevenueByProduct</code>. Switch to Print Preview to see the finished report!</p>
   </div>
 
   <div class="card tip">
