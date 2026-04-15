@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirat — Onboarding Flow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0F1A14; color: #F5F0E8; padding: 2rem; }
+        header { max-width: 1200px; margin: 0 auto 2rem; }
+        h1 { font-size: 2rem; font-family: "Georgia", serif; color: #C8973A; margin-bottom: 0.25rem; }
+        p.subtitle { color: #A89F92; margin-bottom: 0.5rem; }
+        p.back a { color: #C8973A; text-decoration: none; font-size: 0.9rem; }
+        p.back a:hover { text-decoration: underline; }
+        .grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+        .card { background: #1a2620; border-radius: 16px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid #2a3830; }
+        .card img { width: 100%; height: auto; border-radius: 10px; display: block; }
+        .card h2 { font-size: 0.95rem; margin-top: 0.75rem; color: #F5F0E8; font-weight: 500; }
+        .card .step { color: #1B4D35; background: #C8973A; display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .new-badge { background: #1B4D35; color: #C8973A; display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; margin-left: 6px; }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="back"><a href="../">&larr; All wireframes</a></p>
+        <h1>Sirat — Onboarding Flow</h1>
+        <p class="subtitle">12 screens · captured on iPhone 16 Pro · 2026-04-14</p>
+    </header>
+
+    <div class="grid">
+        <div class="card"><span class="step">0</span><img src="onb-00-welcome.png" alt="Welcome"><h2>Welcome</h2></div>
+        <div class="card"><span class="step">1 / 9</span><img src="onb-01-language.png" alt="Language"><h2>Language</h2></div>
+        <div class="card"><span class="step">2 / 9</span><img src="onb-02-name.png" alt="Name"><h2>Name</h2></div>
+        <div class="card"><span class="step">3 / 9</span><img src="onb-03-age.png" alt="Age group"><h2>Age group</h2></div>
+        <div class="card"><span class="step">4 / 9</span><img src="onb-04-goal.png" alt="Goals"><h2>Primary goals</h2></div>
+        <div class="card"><span class="step">5 / 9</span><img src="onb-05-quran.png" alt="Quran"><h2>Quran familiarity</h2></div>
+        <div class="card"><span class="step">6 / 9</span><img src="onb-06-arabic.png" alt="Arabic"><h2>Arabic reading</h2></div>
+        <div class="card"><span class="step">7 / 9</span><img src="onb-07-prayer.png" alt="Prayer"><h2>Prayer consistency</h2></div>
+        <div class="card"><span class="step">8 / 9</span><img src="onb-08-struggle.png" alt="Struggle"><h2>Faith struggle</h2></div>
+        <div class="card"><span class="step">9 / 9</span><img src="onb-09-rating.png" alt="Rating"><h2>Rating ask <span class="new-badge">NEW</span></h2></div>
+        <div class="card"><span class="step">10</span><img src="onb-10-notification.png" alt="Notifications"><h2>Notification permission</h2></div>
+        <div class="card"><span class="step">11</span><img src="onb-11-location.png" alt="Location"><h2>Location permission</h2></div>
+    </div>
+</body>
+</html>
