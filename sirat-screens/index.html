@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirat — Key Screens</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0F1A14; color: #F5F0E8; padding: 2rem; }
+        header { max-width: 1200px; margin: 0 auto 2rem; }
+        h1 { font-size: 2rem; font-family: "Georgia", serif; color: #C8973A; margin-bottom: 0.25rem; }
+        p.subtitle { color: #A89F92; margin-bottom: 0.5rem; }
+        p.back a { color: #C8973A; text-decoration: none; font-size: 0.9rem; }
+        p.back a:hover { text-decoration: underline; }
+        .section { max-width: 1200px; margin: 0 auto 2.5rem; }
+        .section-heading { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #1B4D35; background: #C8973A; display: inline-block; padding: 3px 10px; border-radius: 6px; margin-bottom: 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+        .card { background: #1a2620; border-radius: 16px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid #2a3830; }
+        .card img { width: 100%; height: auto; border-radius: 10px; display: block; }
+        .card h2 { font-size: 0.95rem; margin-top: 0.75rem; color: #F5F0E8; font-weight: 500; }
+        .card .step { color: #1B4D35; background: #C8973A; display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="back"><a href="../">&larr; All wireframes</a></p>
+        <h1>Sirat — Key Screens</h1>
+        <p class="subtitle">8 screens · iPhone 16 Pro · captured 2026-04-17</p>
+    </header>
+
+    <div class="section">
+        <div class="section-heading">Onboarding</div>
+        <div class="grid">
+            <div class="card"><span class="step">Step 1</span><img src="onb-01-welcome.png" alt="Welcome"><h2>Welcome / Splash</h2></div>
+            <div class="card"><span class="step">Step 2</span><img src="onb-02-language.png" alt="Language selection"><h2>Language Selection</h2></div>
+            <div class="card"><span class="step">Step 3</span><img src="onb-03-goals.png" alt="Goals question"><h2>Goals (step 4/10)</h2></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-heading">Core App</div>
+        <div class="grid">
+            <div class="card"><span class="step">Home</span><img src="home.png" alt="Home tab"><h2>Home</h2></div>
+            <div class="card"><span class="step">Quran</span><img src="quran.png" alt="Quran surah list"><h2>Quran (Surah List)</h2></div>
+            <div class="card"><span class="step">Quran</span><img src="quran-verse.png" alt="Al-Fatiha reader"><h2>Quran Verse Reader</h2></div>
+            <div class="card"><span class="step">Chat</span><img src="chat.png" alt="AI chat"><h2>AI Chat</h2></div>
+            <div class="card"><span class="step">Settings</span><img src="settings.png" alt="Settings"><h2>Settings / Profile</h2></div>
+        </div>
+    </div>
+</body>
+</html>
