@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CutOrBulk — 2026-04-17 Snapshot</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #09090f; color: #ffffff; padding: 2rem; }
+        header { max-width: 1200px; margin: 0 auto 2rem; }
+        h1 { font-size: 2rem; color: #B5FF00; margin-bottom: 0.25rem; }
+        h2.section { max-width: 1200px; margin: 3rem auto 1rem; font-size: 1.5rem; color: #B5FF00; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem; }
+        p.subtitle { color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
+        p.section-sub { max-width: 1200px; margin: 0 auto 1rem; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+        p.back a { color: #ff2d78; text-decoration: none; font-size: 0.9rem; }
+        p.back a:hover { text-decoration: underline; }
+        .grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+        .grid-ipad { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+        .card { background: #12121a; border-radius: 16px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); }
+        .card img { width: 100%; height: auto; border-radius: 10px; display: block; }
+        .card h3 { font-size: 0.95rem; margin-top: 0.75rem; color: #ffffff; font-weight: 500; }
+        .tag { color: #09090f; display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .tag-step { background: #B5FF00; }
+        .tag-modal { background: #ff2d78; color: #fff; }
+        .tag-new { background: #60a5fa; }
+        .tag-sub { background: #a78bfa; }
+        .tag-locked { background: #f59e0b; }
+        .tag-unlocked { background: #10b981; }
+        .tag-store { background: #B5FF00; }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="back"><a href="../">&larr; All wireframes</a></p>
+        <h1>CutOrBulk — 2026-04-17 Snapshot</h1>
+        <p class="subtitle">Onboarding + locked/unlocked result + current App Store Connect assets · captured on iPhone 17 Pro</p>
+    </header>
+
+    <h2 class="section">Onboarding flow</h2>
+    <p class="section-sub">Real backend with a live Firebase analysis. The unlocked result is captured via the fake backend (subscribed plan) since a real Superwall purchase is required otherwise.</p>
+    <div class="grid">
+        <div class="card"><span class="tag tag-step">1</span><img src="01-splash.png" alt="Splash"><h3>Splash — Should you cut or bulk?</h3></div>
+        <div class="card"><span class="tag tag-modal">invite</span><img src="02-invite-code.png" alt="Invite code"><h3>Invite code entry (from splash)</h3></div>
+        <div class="card"><span class="tag tag-step">2</span><img src="03-gender.png" alt="Gender"><h3>Gender — Step 1 of 4</h3></div>
+        <div class="card"><span class="tag tag-sub">2b</span><img src="03b-gender-metrics.png" alt="Gender with metrics"><h3>Gender — height & weight revealed</h3></div>
+        <div class="card"><span class="tag tag-new">3</span><img src="04-credibility.png" alt="Credibility"><h3>DEXA-level credibility — Step 2 of 4</h3></div>
+        <div class="card"><span class="tag tag-new">4</span><img src="05-before-after.png" alt="Before/after"><h3>Level Up before/after — Step 3 of 4</h3></div>
+        <div class="card"><span class="tag tag-step">5</span><img src="06-photo-capture.png" alt="Photo capture"><h3>Photo capture — Step 4 of 4</h3></div>
+        <div class="card"><span class="tag tag-step">6</span><img src="07-analyzing.png" alt="Analyzing"><h3>Analyzing (live Cloud Function)</h3></div>
+    </div>
+
+    <h2 class="section">Scan result — locked vs unlocked</h2>
+    <p class="section-sub">Same result view with and without an active entitlement. Locked shows body score + verdict; body fat %, scorecard, and phase plan are gated behind the paywall.</p>
+    <div class="grid">
+        <div class="card"><span class="tag tag-locked">locked</span><img src="08-result-locked.png" alt="Locked result"><h3>Result — locked (body score + verdict only)</h3></div>
+        <div class="card"><span class="tag tag-unlocked">unlocked</span><img src="08b-result-unlocked.png" alt="Unlocked result"><h3>Result — unlocked (full scorecard + body fat %)</h3></div>
+        <div class="card"><span class="tag tag-modal">paywall</span><img src="09-paywall.png" alt="Paywall"><h3>Paywall — RATE MY BODY (Superwall)</h3></div>
+    </div>
+
+    <h2 class="section">App Store Connect — current iPhone screenshots (6.7")</h2>
+    <p class="section-sub">Currently shipping in App Store Connect metadata at <code>fastlane/screenshots/en-US/APP_IPHONE_67_*</code>.</p>
+    <div class="grid">
+        <div class="card"><span class="tag tag-store">1</span><img src="appstore/APP_IPHONE_67_1.png" alt="iPhone 6.7 #1"><h3>iPhone 6.7" — 1</h3></div>
+        <div class="card"><span class="tag tag-store">2</span><img src="appstore/APP_IPHONE_67_2.png" alt="iPhone 6.7 #2"><h3>iPhone 6.7" — 2</h3></div>
+        <div class="card"><span class="tag tag-store">3</span><img src="appstore/APP_IPHONE_67_3.png" alt="iPhone 6.7 #3"><h3>iPhone 6.7" — 3</h3></div>
+        <div class="card"><span class="tag tag-store">4</span><img src="appstore/APP_IPHONE_67_4.png" alt="iPhone 6.7 #4"><h3>iPhone 6.7" — 4</h3></div>
+        <div class="card"><span class="tag tag-store">5</span><img src="appstore/APP_IPHONE_67_5.png" alt="iPhone 6.7 #5"><h3>iPhone 6.7" — 5</h3></div>
+        <div class="card"><span class="tag tag-store">6</span><img src="appstore/APP_IPHONE_67_6.png" alt="iPhone 6.7 #6"><h3>iPhone 6.7" — 6</h3></div>
+    </div>
+
+    <h2 class="section">App Store Connect — current iPad Pro screenshots (12.9")</h2>
+    <p class="section-sub">Currently shipping in App Store Connect metadata at <code>fastlane/screenshots/en-US/APP_IPAD_PRO_129_*</code>.</p>
+    <div class="grid grid-ipad">
+        <div class="card"><span class="tag tag-store">1</span><img src="appstore/APP_IPAD_PRO_129_1.png" alt="iPad 12.9 #1"><h3>iPad Pro 12.9" — 1</h3></div>
+        <div class="card"><span class="tag tag-store">2</span><img src="appstore/APP_IPAD_PRO_129_2.png" alt="iPad 12.9 #2"><h3>iPad Pro 12.9" — 2</h3></div>
+        <div class="card"><span class="tag tag-store">3</span><img src="appstore/APP_IPAD_PRO_129_3.png" alt="iPad 12.9 #3"><h3>iPad Pro 12.9" — 3</h3></div>
+        <div class="card"><span class="tag tag-store">4</span><img src="appstore/APP_IPAD_PRO_129_4.png" alt="iPad 12.9 #4"><h3>iPad Pro 12.9" — 4</h3></div>
+        <div class="card"><span class="tag tag-store">5</span><img src="appstore/APP_IPAD_PRO_129_5.png" alt="iPad 12.9 #5"><h3>iPad Pro 12.9" — 5</h3></div>
+        <div class="card"><span class="tag tag-store">6</span><img src="appstore/APP_IPAD_PRO_129_6.png" alt="iPad 12.9 #6"><h3>iPad Pro 12.9" — 6</h3></div>
+    </div>
+</body>
+</html>
